@@ -40,5 +40,9 @@ function getData(){
          html+= '<br><b>Last Played: </b>' + lastPlayed;
          html += '<br><b>Joined on: </b>' + joined.replace('T', ' at ');
          $('.profile').html(html);
-      });
+      }).fail(function(data){
+            html = '<h1>A user with that name does not exist.';
+             $('.profile').html(html);
+            return;
+      });;
 }
